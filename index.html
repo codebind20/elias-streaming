@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ELIAS | Films et séries en streaming</title>
+<meta name="description" content="ELIAS, la plateforme de streaming : films et séries, nouveautés, top de la semaine. Regardez sur mobile et ordinateur.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ELIAS | Films et séries en streaming">
+<meta property="og:description" content="Films et séries en streaming, nouveautés et top de la semaine.">
+<meta name="theme-color" content="#000000">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+:root{--y:#ffd400;--y2:#ff9f00;--bg:#000;--panel:#141414;--line:#ffffff1f;--mu:#a3a3a3;--disp:'Big Shoulders Display',Impact,'Arial Narrow',sans-serif;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;color:#fff;font-family:Figtree,system-ui,Arial,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+:focus-visible{outline:2px solid var(--y);outline-offset:3px}
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;height:calc(68px + env(safe-area-inset-top,0px));padding:env(safe-area-inset-top,0px) 4% 0;display:flex;align-items:center;gap:30px;background:linear-gradient(#000c,transparent);transition:background .35s}
+.nav.s{background:#000e;backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+.logo{display:flex;align-items:center;gap:10px;font:900 32px/1 var(--disp);letter-spacing:.06em;cursor:pointer}
+.logo i{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,var(--y),var(--y2));display:grid;place-items:center;box-shadow:0 0 22px #ffd40055}
+.logo i:after{content:"";border-left:11px solid #000;border-top:7px solid transparent;border-bottom:7px solid transparent;margin-left:3px}
+.nav ul{display:flex;gap:6px;list-style:none}
+.nav li{padding:8px 14px;border-radius:20px;font-size:14px;font-weight:600;color:#cfcfcf;cursor:pointer;transition:.25s}
+.nav li:hover{color:#fff;background:#ffffff14}.nav li.on{color:#000;background:var(--y)}
+.sr{margin-left:auto;display:flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid transparent;border-radius:30px;transition:.3s}
+.sr:focus-within{border-color:#ffffff4d;background:#000a}
+.sr input{width:0;background:none;border:0;outline:0;color:#fff;font:inherit;transition:width .35s}
+.sr:focus-within input,.sr input:not(:placeholder-shown){width:min(230px,46vw)}
+.av{width:34px;height:34px;border-radius:50%;background:var(--y);color:#000;font-weight:800;display:grid;place-items:center}
+.hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;padding:0 4% 14vh;overflow:hidden}
+.hero.q{display:none}
+.hbg{position:absolute;inset:-4%;transition:opacity .9s;animation:pan 20s ease-in-out infinite alternate}
+.hero:before{content:"";position:absolute;inset:-60% -20%;z-index:1;background:linear-gradient(105deg,transparent 42%,#ffd40026 50%,transparent 58%);transform:translateX(-70%);animation:beam 9s ease-in-out infinite}
+.hero:after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,#000 3%,transparent 60%),linear-gradient(90deg,#000d,transparent 70%)}
+.ghost{position:absolute;right:4%;bottom:6%;z-index:1;font:900 clamp(220px,46vw,640px)/.8 var(--disp);color:#ffffff08;-webkit-text-stroke:2px #ffd4002e;pointer-events:none}
+.hc{position:relative;z-index:3;max-width:640px}
+.hc>*{animation:rise .8s cubic-bezier(.2,.8,.2,1) both}
+.hc>*:nth-child(2){animation-delay:.1s}.hc>*:nth-child(3){animation-delay:.2s}.hc>*:nth-child(4){animation-delay:.3s}.hc>*:nth-child(5){animation-delay:.4s}
+.badge{display:inline-block;margin-bottom:14px;padding:6px 12px;border-radius:6px;background:var(--y);color:#000;font-weight:800;font-size:13px}
+.hc h1{font:900 clamp(64px,13vw,150px)/.86 var(--disp);letter-spacing:.01em;text-wrap:balance;text-shadow:0 6px 40px #000a}
+.meta{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin:18px 0 12px;font-size:15px;font-weight:600;color:#ddd}
+.meta b{padding:2px 8px;border:1px solid var(--y);color:var(--y);border-radius:5px;font-size:13px}
+.hc p{font-size:clamp(15px,1.5vw,18px);line-height:1.55;color:#e4e4e4;max-width:520px;margin-bottom:26px}
+.b{display:inline-flex;align-items:center;gap:10px;padding:14px 30px;border-radius:10px;font-weight:700;font-size:16px;transition:.25s;margin:0 10px 10px 0}
+.b.p{background:var(--y);color:#000}.b.p:hover{background:#fff;transform:scale(1.04)}
+.b.g{background:#ffffff26;backdrop-filter:blur(10px)}.b.g:hover{background:#ffffff42}
+.tri{border-left:13px solid currentColor;border-top:8px solid transparent;border-bottom:8px solid transparent}
+.hp{position:absolute;z-index:3;left:4%;right:4%;bottom:6vh;display:flex;gap:8px;max-width:640px}
+.hp button{flex:1;height:26px;display:flex;align-items:center}
+.hp button:before{content:"";width:100%;height:3px;border-radius:3px;background:#ffffff3d}
+.hp button.on:before{background:linear-gradient(90deg,var(--y) 0 0) 0/0 100% no-repeat #ffffff3d;animation:fill 8s linear forwards}
+.chips{display:flex;gap:10px;overflow-x:auto;padding:0 4% 4px;margin-top:-5vh;position:relative;z-index:4;scrollbar-width:none}
+.chips::-webkit-scrollbar,.sc::-webkit-scrollbar{display:none}
+.hero.q+.chips{margin-top:90px}
+.chip{flex:none;padding:9px 20px;border-radius:30px;border:1px solid var(--line);background:#000a;font-size:14px;font-weight:600;transition:.25s}
+.chip:hover{border-color:var(--y)}.chip.on{background:var(--y);border-color:var(--y);color:#000}
+.row{padding-top:30px}.rh{padding:0 4%;margin-bottom:6px;font:800 28px/1.1 var(--disp);letter-spacing:.03em}
+.sw{position:relative}
+.sc{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x proximity;padding:14px 4% 26px;scrollbar-width:none}
+.ar{position:absolute;top:14px;bottom:26px;width:4%;min-width:44px;z-index:6;background:#000c;font-size:34px;opacity:0;transition:.25s}
+.ar.l{left:0}.ar.r{right:0}.sw:hover .ar{opacity:1}
+.card{flex:0 0 clamp(132px,15vw,206px);scroll-snap-align:start;position:relative;cursor:pointer;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.card:hover{transform:translateY(-8px) scale(1.06);z-index:5}
+.poster{aspect-ratio:2/3;border-radius:12px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:14px;background:radial-gradient(circle at 80% 22%,hsla(var(--h),85%,52%,.5),transparent 52%),linear-gradient(170deg,hsl(var(--h),55%,20%),#000 78%);box-shadow:0 10px 26px #000a;transition:box-shadow .3s}
+.poster:before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 38%,#ffd40033 50%,transparent 62%);transform:translateX(-100%);transition:transform .7s}
+.card:hover .poster{box-shadow:0 20px 44px #000,0 0 0 2px var(--y)}.card:hover .poster:before{transform:translateX(100%)}
+.poster b{position:relative;font:900 clamp(26px,2.9vw,38px)/.9 var(--disp);letter-spacing:.02em}
+.poster small{position:relative;margin-top:8px;font-size:12px;font-weight:700;color:var(--y)}
+.ac{position:absolute;top:9px;right:9px;z-index:2;width:32px;height:32px;border-radius:50%;background:#000b;font-size:18px;font-weight:700;opacity:0;transition:.25s}
+.card:hover .ac,.ac.on{opacity:1}.ac.on{background:var(--y);color:#000}
+@media(hover:none){.ac{opacity:1}.ar{display:none}}
+.t10 .card{margin-left:34px}.rank{position:absolute;left:-40px;bottom:-4px;font:900 110px/1 var(--disp);color:#000;-webkit-text-stroke:2px var(--y);pointer-events:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:22px 14px;padding:16px 4% 30px}
+.empty{padding:20px 4% 60px;color:var(--mu);font-size:16px}
+footer{margin-top:50px;padding:40px 4% 50px;border-top:1px solid var(--line);color:var(--mu);font-size:14px;display:flex;flex-wrap:wrap;gap:16px 36px;align-items:center}
+footer a{color:var(--mu);text-decoration:none}footer a:hover{color:var(--y)}footer .logo{color:#fff;font-size:26px;margin-right:auto}
+.tab{display:none}
+.md{position:fixed;inset:0;z-index:100;background:#000c;backdrop-filter:blur(10px);display:none;overflow:auto;padding:calc(4vh + env(safe-area-inset-top,0px)) 4% 4vh}
+.md.o{display:block;animation:fade .3s}
+.box{max-width:900px;margin:auto;background:var(--panel);border-radius:18px;overflow:hidden;box-shadow:0 40px 90px #000;animation:pop .45s cubic-bezier(.2,.8,.2,1)}
+.bn{position:relative;min-height:clamp(220px,40vw,360px);display:flex;align-items:flex-end;padding:26px}
+.bn:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,var(--panel),transparent 70%)}
+.bn>*{position:relative;z-index:2}.bn h2{font:900 clamp(48px,9vw,96px)/.88 var(--disp)}
+.x{position:absolute!important;top:14px;right:14px;z-index:5!important;width:40px;height:40px;border-radius:50%;background:#000a;font-size:20px}
+.bd{padding:6px 26px 30px}.bd p{line-height:1.6;color:#d6d6d6;margin:10px 0 18px;max-width:640px}
+.ep{display:flex;gap:16px;align-items:center;padding:14px;border-radius:12px;cursor:pointer;transition:.2s}
+.ep:hover{background:#ffffff12}.ep em{font:900 30px var(--disp);color:var(--y);width:34px;font-style:normal}
+.ep span{display:block;color:var(--mu);font-size:13px;margin-top:2px}
+.pv{position:fixed;inset:0;z-index:200;background:#000;display:none;flex-direction:column}
+.pv.o{display:flex;animation:fade .3s}
+.pt{display:flex;align-items:center;gap:16px;padding:calc(14px + env(safe-area-inset-top,0px)) 4% 14px;font-weight:700}
+.st{flex:1;min-height:0;position:relative;display:grid;place-items:center}
+.st video{width:100%;height:100%;background:#000}
+.ph{position:absolute;text-align:center;padding:0 8%;color:var(--mu);line-height:1.6;pointer-events:none}
+.ph i{display:block;margin:0 auto 18px;width:84px;height:84px;border-radius:50%;background:var(--y);animation:pulse 2s infinite;display:grid;place-items:center;color:#000}
+@keyframes fade{from{opacity:0}}@keyframes pop{from{opacity:0;transform:translateY(30px) scale(.96)}}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}}@keyframes pan{to{transform:scale(1.08) translateX(-2%)}}
+@keyframes beam{40%,100%{transform:translateX(70%)}}@keyframes fill{to{background-size:100% 100%}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 #ffd40088}100%{box-shadow:0 0 0 30px #ffd40000}}
+@media(max-width:760px){
+.nav{gap:12px}.nav ul{display:none}.hero{min-height:84vh;padding-bottom:16vh}.hp{bottom:11vh}
+.tab{position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;justify-content:space-around;padding:8px 0 calc(8px + env(safe-area-inset-bottom,0px));background:#000f;backdrop-filter:blur(14px);border-top:1px solid var(--line)}
+.tab button{padding:8px 14px;font-size:12px;font-weight:700;color:var(--mu)}.tab button.on{color:var(--y)}
+body{padding-bottom:64px}.rank{font-size:90px}.bd{padding:6px 18px 24px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="nav" id="nav">
+<div class="logo" onclick="go('')"><i></i>ELIAS</div>
+<ul id="tabs"><li data-k="" class="on">Accueil</li><li data-k="Film">Films</li><li data-k="Série">Séries</li><li data-k="list">Ma liste</li></ul>
+<label class="sr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="q" placeholder="Titre, genre" aria-label="Rechercher" autocomplete="off"></label>
+<div class="av">E</div>
+</header>
+<main>
+<section class="hero" id="hero"><div class="hbg" id="hbg"></div><div class="ghost" id="gh"></div><div class="hc" id="hc"></div><div class="hp" id="hp"></div></section>
+<div class="chips" id="chips"></div>
+<div id="rows"></div>
+</main>
+<footer><div class="logo"><i></i>ELIAS</div><a href="#">Aide</a><a href="#">Confidentialité</a><a href="#">Conditions d'utilisation</a><a href="#">Contact</a><span>© 2026 ELIAS</span></footer>
+<nav class="tab" id="tab"><button data-k="" class="on">Accueil</button><button data-k="Film">Films</button><button data-k="Série">Séries</button><button data-k="list">Ma liste</button></nav>
+<div class="md" id="md"></div>
+<div class="pv" id="pv"><div class="pt"><button class="b g" id="back" style="margin:0;padding:10px 18px">Retour</button><span id="pn"></span></div><div class="st"><video id="vd" controls playsinline></video><div class="ph" id="ph"><i><span class="tri"></span></i>Ajoutez le fichier vidéo de ce titre pour le lancer ici.<br>Le lecteur est prêt.</div></div></div>
+<script>
+const D=[
+{id:1,t:"Éclipse Noire",k:"Film",g:["Thriller","Sci-Fi"],y:2025,r:"8.7",a:"16+",m:"2 h 08",h:268,top:1,d:"Quand le soleil disparaît pendant onze minutes, une ingénieure découvre que la ville entière a été effacée de toutes les cartes."},
+{id:2,t:"Les Gardiens d'Or",k:"Série",g:["Action","Fantastique"],y:2025,r:"9.0",a:"12+",m:"2 saisons",h:45,top:1,d:"Cinq héritiers d'un royaume oublié doivent retrouver les clés d'or avant la prochaine éclipse."},
+{id:3,t:"Dernier Mirage",k:"Série",g:["Drame","Aventure"],y:2024,r:"8.5",a:"12+",m:"3 saisons",h:28,top:1,d:"Une caravane traverse le désert à la recherche d'une oasis que personne n'a jamais vue."},
+{id:4,t:"Code Zéro",k:"Série",g:["Thriller","Action"],y:2025,r:"8.4",a:"16+",m:"1 saison",h:350,top:1,d:"Une équipe de cyberdétectives a 48 heures pour stopper une panne mondiale."},
+{id:5,t:"Sahara 2099",k:"Film",g:["Sci-Fi","Action"],y:2025,r:"8.2",a:"12+",m:"2 h 21",h:35,top:1,d:"Dans un futur aride, un convoyeur d'eau accepte une mission qui change le sort des dernières cités."},
+{id:6,t:"Nuit Blanche",k:"Film",g:["Thriller"],y:2024,r:"7.9",a:"16+",m:"1 h 52",h:215,d:"Une nuit, un appel anonyme et un seul témoin qui connaît la vérité."},
+{id:7,t:"Rire Éclair",k:"Film",g:["Comédie"],y:2024,r:"7.6",a:"Tous",m:"1 h 40",h:320,d:"Deux cousins que tout oppose organisent le mariage de l'année en trois jours."},
+{id:8,t:"Horizon Rouge",k:"Film",g:["Action"],y:2023,r:"8.0",a:"16+",m:"2 h 03",h:8,d:"Un pilote d'essai doit voler au-delà de ses limites pour sauver son équipage."},
+{id:9,t:"La Dernière Cité",k:"Série",g:["Drame"],y:2024,r:"8.8",a:"16+",m:"2 saisons",h:160,d:"Dans une ville assiégée, trois familles choisissent entre fuir et résister."},
+{id:10,t:"Ombres du Nord",k:"Série",g:["Thriller","Drame"],y:2023,r:"8.3",a:"16+",m:"3 saisons",h:200,d:"Un inspecteur retourne dans son village natal où les disparitions reprennent."},
+{id:11,t:"Cap sur Mars",k:"Film",g:["Sci-Fi","Aventure"],y:2025,r:"8.1",a:"Tous",m:"2 h 10",h:15,d:"Le premier équipage civil part pour Mars, sans savoir ce qui l'y attend."},
+{id:12,t:"Les Frères Dorés",k:"Film",g:["Comédie","Action"],y:2024,r:"7.7",a:"12+",m:"1 h 47",h:50,d:"Deux frères cambrioleurs retraités reprennent du service pour une dernière affaire."}
+];
+const EP=["Le départ","L'alliance","Sous la tempête","Le piège","La trahison","Le retour","La chute","Dernier souffle"];
+const $=s=>document.querySelector(s),esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let mem=[],st={k:"",g:"Tous",q:""},hi=0,timer;
+const LS=()=>{try{return JSON.parse(localStorage.getItem("elias_list")||"[]")}catch(e){return mem}};
+const SV=a=>{mem=a;try{localStorage.setItem("elias_list",JSON.stringify(a))}catch(e){}};
+const inL=id=>LS().includes(id),byId=id=>D.find(x=>x.id==id);
+const art=h=>`radial-gradient(circle at 76% 30%,hsla(${h},88%,52%,.6),transparent 46%),radial-gradient(circle at 92% 78%,#ffd40040,transparent 36%),linear-gradient(135deg,hsl(${h},60%,14%),#000 75%)`;
+const T5=D.filter(x=>x.top);
+function hero(){
+ const x=T5[hi];$("#hbg").style.background=art(x.h);$("#gh").textContent=x.t[0];
+ $("#hc").innerHTML=`<span class="badge">N°${hi+1} cette semaine</span><h1>${x.t}</h1><div class="meta"><b>${x.a}</b><span>${x.y}</span><span>${x.m}</span><span>${x.g.join(", ")}</span></div><p>${x.d}</p><div><button class="b p" data-play="${x.id}"><span class="tri"></span>Lecture</button><button class="b g" data-open="${x.id}">Plus d'infos</button></div>`;
+ $("#hp").innerHTML=T5.map((_,i)=>`<button data-h="${i}" class="${i==hi?"on":""}" aria-label="Titre ${i+1}"></button>`).join("");
+ clearTimeout(timer);timer=setTimeout(()=>{hi=(hi+1)%T5.length;hero()},8000);
+}
+const card=(x,i)=>`<article class="card" data-open="${x.id}" tabindex="0"><div class="poster" style="--h:${x.h}"><button class="ac${inL(x.id)?" on":""}" data-add="${x.id}" aria-label="Ma liste">${inL(x.id)?"✓":"+"}</button><b>${x.t}</b><small>★ ${x.r}</small></div>${i>=0?`<span class="rank">${i+1}</span>`:""}</article>`;
+const row=(t,l,n)=>l.length?`<section class="row ${n?"t10":""}"><h2 class="rh">${t}</h2><div class="sw"><button class="ar l">‹</button><div class="sc">${l.map((x,i)=>card(x,n?i:-1)).join("")}</div><button class="ar r">›</button></div></section>`:"";
+function rows(){
+ const R=$("#rows"),q=st.q;$("#hero").classList.toggle("q",!!q);
+ if(q){const f=D.filter(x=>(x.t+" "+x.g.join(" ")+" "+x.k).toLowerCase().includes(q));
+  R.innerHTML=`<section class="row"><h2 class="rh">Résultats pour « ${esc(q)} »</h2>${f.length?`<div class="grid">${f.map(x=>card(x,-1)).join("")}</div>`:`<p class="empty">Aucun titre trouvé. Essayez un autre mot ou choisissez un genre.</p>`}</section>`;return}
+ if(st.k=="list"){const l=D.filter(x=>inL(x.id));R.innerHTML=l.length?row("Ma liste",l):`<section class="row"><h2 class="rh">Ma liste</h2><p class="empty">Votre liste est vide. Touchez + sur un titre pour l'ajouter.</p></section>`;return}
+ const L=D.filter(x=>(!st.k||x.k==st.k)&&(st.g=="Tous"||x.g.includes(st.g)));
+ R.innerHTML=(L.length?row("Top 5 cette semaine",L.filter(x=>x.top).sort((a,b)=>b.r-a.r),1)+row("Nouveautés",L.filter(x=>x.y>=2025))+row("Séries à enchaîner",L.filter(x=>x.k=="Série"))+row("Films à voir ce soir",L.filter(x=>x.k=="Film"))+row("Ma liste",D.filter(x=>inL(x.id))):`<p class="empty">Aucun titre dans cette catégorie pour le moment.</p>`);
+}
+function chips(){$("#chips").innerHTML=["Tous","Action","Thriller","Sci-Fi","Drame","Comédie","Fantastique","Aventure"].map(g=>`<button class="chip${g==st.g?" on":""}" data-g="${g}">${g}</button>`).join("")}
+function go(k){st.k=k;st.q="";$("#q").value="";document.querySelectorAll("#tabs li,#tab button").forEach(e=>e.classList.toggle("on",e.dataset.k==k));rows();scrollTo({top:0})}
+function openM(id){
+ const x=byId(id),s=x.k=="Série";
+ $("#md").innerHTML=`<div class="box"><div class="bn" style="background:${art(x.h)}"><button class="x" data-close aria-label="Fermer">✕</button><h2>${x.t}</h2></div><div class="bd"><div class="meta"><b>${x.a}</b><span>★ ${x.r}</span><span>${x.y}</span><span>${x.m}</span><span>${x.g.join(", ")}</span></div><p>${x.d}</p><button class="b p" data-play="${x.id}"><span class="tri"></span>${s?"Lire l'épisode 1":"Lecture"}</button><button class="b g" data-add="${x.id}">${inL(x.id)?"Dans ma liste":"Ajouter à ma liste"}</button>${s?`<h3 style="margin:18px 0 6px;font:800 24px var(--disp)">Épisodes</h3>`+EP.map((e,i)=>`<div class="ep" data-play="${x.id}" data-ep="${i+1}"><em>${i+1}</em><div>${e}<span>${40+i%3*4} min</span></div></div>`).join(""):""}</div></div>`;
+ $("#md").classList.add("o");document.body.style.overflow="hidden";
+}
+function closeM(){$("#md").classList.remove("o");document.body.style.overflow=""}
+function play(id,ep){
+ const x=byId(id),v=$("#vd");$("#pn").textContent=x.t+(ep?" — Épisode "+ep:"");
+ if(x.src){v.src=x.src;v.hidden=false;$("#ph").hidden=true;v.play().catch(()=>{})}else{v.removeAttribute("src");v.hidden=true;$("#ph").hidden=false}
+ closeM();$("#pv").classList.add("o");document.body.style.overflow="hidden";
+}
+function stop(){const v=$("#vd");v.pause();$("#pv").classList.remove("o");document.body.style.overflow=""}
+document.addEventListener("click",e=>{
+ const t=e.target,c=n=>t.closest(n);
+ if(c("[data-add]")){e.stopPropagation();const id=+c("[data-add]").dataset.add,l=LS();SV(l.includes(id)?l.filter(i=>i!=id):[...l,id]);rows();if($("#md").classList.contains("o"))openM(id);return}
+ if(c("[data-play]")){const b=c("[data-play]");play(+b.dataset.play,b.dataset.ep);return}
+ if(c("[data-open]")){openM(+c("[data-open]").dataset.open);return}
+ if(c("[data-close]")||t.id=="md"){closeM();return}
+ if(c("[data-h]")){hi=+c("[data-h]").dataset.h;hero();return}
+ if(c("[data-g]")){st.g=c("[data-g]").dataset.g;chips();rows();return}
+ if(c("#tabs li,#tab button")){go(c("#tabs li,#tab button").dataset.k);return}
+ if(c(".ar")){const s=c(".sw").querySelector(".sc");s.scrollBy({left:(c(".ar.l")?-1:1)*s.clientWidth*.8,behavior:"smooth"})}
+ if(c("#back"))stop();
+});
+document.addEventListener("keydown",e=>{if(e.key=="Escape"){stop();closeM()}if(e.key=="Enter"&&e.target.classList.contains("card"))openM(+e.target.dataset.open)});
+$("#q").addEventListener("input",e=>{st.q=e.target.value.trim().toLowerCase();rows()});
+addEventListener("scroll",()=>$("#nav").classList.toggle("s",scrollY>30),{passive:true});
+hero();chips();rows();
+</script>
+</body>
+</html>
